@@ -1,0 +1,6 @@
+framework module HoneyQD {
+  umbrella header "HoneyQD-umbrella.h"
+
+  export *
+  module * { export * }
+}

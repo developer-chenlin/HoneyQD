@@ -1,0 +1,16 @@
+use_frameworks!
+
+target 'HoneyQD_Example' do
+  pod 'HoneyQD', :path => '../'
+  
+
+  target 'HoneyQD_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+  22
+  end
+end
