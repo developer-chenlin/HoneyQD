@@ -9,6 +9,7 @@
 #import "HoneyQDAppDelegate.h"
 
 
+#import "HoneyQD.h"
 
 
 
@@ -17,6 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    kShowHUDAndActivity;
     
     
  

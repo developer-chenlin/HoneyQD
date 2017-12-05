@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HoneyQD'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of HoneyQD.'
+  s.version          = '1.0.0'
+  s.summary          = '项目常用框架.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,17 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+ 快速集成项目常用框架.
+                        DESC
 
-  s.homepage         = 'https://github.com/chenlinios@sina.com/HoneyQD'
+  s.homepage         = 'https://github.com/developer-chenlin/HoneyQD'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'chenlinios@sina.com' => 'chenlinios@sina.com' }
-  s.source           = { :git => 'https://github.com/chenlinios@sina.com/HoneyQD.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/developer-chenlin/HoneyQD.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'HoneyQD/Classes/**/*'
   
@@ -36,7 +36,8 @@ TODO: Add long description of the pod here.
   #   'HoneyQD' => ['HoneyQD/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.public_header_files = 'HoneyQD/Classes/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+
+   s.dependency 'MBProgressHUD', '~> 1.1.0'
 end

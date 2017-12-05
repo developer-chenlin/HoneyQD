@@ -10,7 +10,9 @@
 #endif
 #endif
 
-#import "UIColor+QD.h"
+#import "HoneyQD.h"
+#import "HoneyCommonDefine.h"
+#import "UIColor+HoneyQD.h"
 
 FOUNDATION_EXPORT double HoneyQDVersionNumber;
 FOUNDATION_EXPORT const unsigned char HoneyQDVersionString[];
