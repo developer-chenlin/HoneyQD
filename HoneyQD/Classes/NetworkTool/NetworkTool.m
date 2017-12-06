@@ -52,7 +52,7 @@
              [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
          
              // 设置本次请求请求体的长度(因为服务器会根据你这个设定的长度去解析你的请求体中的参数内容)
-             [request setValue:[NSString stringWithFormat:@"%ld",bodyData.length] forHTTPHeaderField:@"Content-Length"];
+             [request setValue:[NSString stringWithFormat:@"%lu",bodyData.length] forHTTPHeaderField:@"Content-Length"];
              
              //设置本次请求的最大时常
              request.timeoutInterval = 20;
