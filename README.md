@@ -22,8 +22,12 @@ pod 'HoneyQD'
 
 ## Author
 
-chenlinios@sina.com, chenlinios@sina.com
+chenlinios@sina.com
 
 ## License
+
+
+## V1.0.2
+1.Add  Net Module;
 
 HoneyQD is available under the MIT license. See the LICENSE file for more info.

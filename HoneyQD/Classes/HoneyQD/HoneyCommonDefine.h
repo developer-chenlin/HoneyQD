@@ -29,11 +29,7 @@
 //3.设置随机颜色
 #define HoneyQDRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
 
-//4.设置RGB颜色/设置RGBA颜色
-#define HoneyQDRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
-#define HoneyQDRGBAColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(r)/255.0 blue:(r)/255.0 alpha:a]
-// clear背景颜色
-#define HoneyQDClearColor [UIColor clearColor]
+
 
 //5.自定义高效率的 NSLog
 #ifdef DEBUG
@@ -60,76 +56,23 @@
 #define HoneyQDRadianToDegrees(radian) (radian*180.0)/(M_PI)
 
 
-//---------------------------------------11111
-
-//9.设置加载提示框（第三方框架：Toast）
-#define HoneyQDToast(str)              CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle]; \
-[kWindow  makeToast:str duration:0.6 position:CSToastPositionCenter style:style];\
-kWindow.userInteractionEnabled = NO; \
-dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{\
-kWindow.userInteractionEnabled = YES;\
-});\
-
-//10.设置加载提示框（第三方框架：MBProgressHUD）
-// 加载
-#define kShowNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
-// 收起加载
-#define HideNetworkActivityIndicator()      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
-// 设置加载
-#define NetworkActivityIndicatorVisible(x)  [UIApplication sharedApplication].networkActivityIndicatorVisible = x
-
-#define kWindow [UIApplication sharedApplication].keyWindow
-
-#define kBackView         for (UIView *item in kWindow.subviews) { \
-if(item.tag == 10000) \
-{ \
-[item removeFromSuperview]; \
-UIView * aView = [[UIView alloc] init]; \
-aView.frame = [UIScreen mainScreen].bounds; \
-aView.tag = 10000; \
-aView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3]; \
-[kWindow addSubview:aView]; \
-} \
-} \
-
-#define kShowHUDAndActivity kBackView;[MBProgressHUD showHUDAddedTo:kWindow animated:YES];kShowNetworkActivityIndicator()
 
 
-#define kHiddenHUD [MBProgressHUD hideAllHUDsForView:kWindow animated:YES]
-
-#define kRemoveBackView         for (UIView *item in kWindow.subviews) { \
-if(item.tag == 10000) \
-{ \
-[UIView animateWithDuration:0.4 animations:^{ \
-item.alpha = 0.0; \
-} completion:^(BOOL finished) { \
-[item removeFromSuperview]; \
-}]; \
-} \
-} \
-
-#define kHiddenHUDAndAvtivity kRemoveBackView;kHiddenHUD;HideNetworkActivityIndicator()
-
-//---------------------------------------222222
-
-
-
-
-//获取图片资源
+//9.获取图片资源
 #define kGetImage(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
 
 
-//12.获取当前语言
+//10.获取当前语言
 #define HoneyQDCurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
 
-//13.使用 ARC 和 MRC
+//11.使用 ARC 和 MRC
 #if __has_feature(objc_arc)
 // ARC
 #else
 // MRC
 #endif
 
-//14.判断当前的iPhone设备/系统版本
+//12.判断当前的iPhone设备/系统版本
 //判断是否为iPhone
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
@@ -154,7 +97,7 @@ item.alpha = 0.0; \
 //判断 iOS 8 或更高的系统版本
 #define IOS_VERSION_8_OR_LATER (([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0)? (YES):(NO))
 
-//15.判断是真机还是模拟器
+//13.判断是真机还是模拟器
 #if TARGET_OS_IPHONE
 //iPhone Device
 #endif
@@ -163,7 +106,7 @@ item.alpha = 0.0; \
 //iPhone Simulator
 #endif
 
-//16.沙盒目录文件
+//14.沙盒目录文件
 //获取temp
 #define kPathTemp NSTemporaryDirectory()
 
@@ -173,7 +116,7 @@ item.alpha = 0.0; \
 //获取沙盒 Cache
 #define kPathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
-//17.GCD 的宏定义
+//15.GCD 的宏定义
 //GCD - 一次性执行
 #define kDISPATCH_ONCE_BLOCK(onceBlock) static dispatch_once_t onceToken; dispatch_once(&onceToken, onceBlock);
 

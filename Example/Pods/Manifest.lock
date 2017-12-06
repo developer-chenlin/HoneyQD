@@ -9,7 +9,9 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - HoneyQD (1.0.0)
+  - HoneyQD (1.0.1):
+    - MBProgressHUD (~> 1.1.0)
+  - MBProgressHUD (1.1.0)
   - Specta (1.0.7)
 
 DEPENDENCIES:
@@ -27,9 +29,10 @@ SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   Expecta+Snapshots: dcff217eef506dabd6dfdc7864ea2da321fafbb8
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  HoneyQD: 24cecc255921c0f0bfc611080947b9d83eac94d3
+  HoneyQD: 3f7982a1d9373ed90b63cc698096ba2e08f0f018
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
-PODFILE CHECKSUM: 7183c8fee0215c000a46e11bfb93d3c8c20a9784
+PODFILE CHECKSUM: 1b93d19618d62ab99f79e0ef17f8ae9139b6a4df
 
 COCOAPODS: 1.4.0.beta.2

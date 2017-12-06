@@ -8,17 +8,50 @@
 
 #import "HoneyQDViewController.h"
 
-@interface HoneyQDViewController ()
+#import "HoneyQD.h"
+
+@interface HoneyQDViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
 @implementation HoneyQDViewController
+{
+    NSInteger  cacheCount;
+    UITableView *table;
+}
 
 - (void)viewDidLoad
 {
+    
+    table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,  self.view.width, self.view.height) style:UITableViewStylePlain];
+    table.delegate = self;
+    table.dataSource = self;
+    [table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CCCCC"];
+    [self.view addSubview:table];
+ 
+
+    [NetworkTool NetworkToolWithMethod:HTTPMethodGET url:@"http://172.20.10.2/cache.php" params:nil success:^(NSDictionary *jsonDic) {
+        cacheCount = jsonDic.count;
+        [table reloadData];
+    } fail:^(id cc) {
+        
+    }];
+    
+  
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return cacheCount;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:@"CCCCC"];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row +1];
+    return  cell;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
