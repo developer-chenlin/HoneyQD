@@ -7,8 +7,9 @@
 //
 
 #import "HoneyQDViewController.h"
-
 #import "HoneyQD.h"
+
+
 
 @interface HoneyQDViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -23,20 +24,30 @@
 - (void)viewDidLoad
 {
     
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES)lastObject];
+    
+    
+ 
+
+    HoneyQDLog(@"路径 %@",[CleanCache documentPath]);
+
+    [CleanCache clearCachesFromDirectoryPath:documentPath];
+    
+    
     table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,  self.view.width, self.view.height) style:UITableViewStylePlain];
     table.delegate = self;
     table.dataSource = self;
     [table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CCCCC"];
     [self.view addSubview:table];
  
-
+/*
     [NetworkTool NetworkToolWithMethod:HTTPMethodGET url:@"http://172.20.10.2/cache.php" params:nil success:^(NSDictionary *jsonDic) {
         cacheCount = jsonDic.count;
         [table reloadData];
     } fail:^(id cc) {
         
     }];
-    
+  */
   
     [super viewDidLoad];
 }

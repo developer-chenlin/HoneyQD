@@ -11,6 +11,7 @@
 #endif
 
 #import "HoneyQD.h"
+#import "CleanCache.h"
 #import "HoneyCommonDefine.h"
 #import "UIColor+Honey.h"
 #import "UIView+Frame.h"

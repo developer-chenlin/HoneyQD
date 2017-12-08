@@ -23,6 +23,7 @@
             NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
             NSURLSession *session = [NSURLSession sharedSession];
             NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                if ( data == nil ) return ;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                     if (dic) {

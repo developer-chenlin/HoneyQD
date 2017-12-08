@@ -13,7 +13,7 @@
 #import "UIColor+Honey.h"
 #import "UIView+Frame.h"
 #import "NetworkTool.h"
-
+#import "CleanCache.h"
 
 
 
