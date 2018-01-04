@@ -57,11 +57,15 @@
     [[NSScanner scannerWithString:greenStr] scanHexInt:&g];
     [[NSScanner scannerWithString:blueStr] scanHexInt:&b];
     [[NSScanner scannerWithString:alphaStr] scanHexInt:&a];
-    
-     
-    
+
     return [UIColor colorWithRed:((float)r / 255.0f) green:((float)g / 255.0f) blue:((float)b / 255.0f) alpha:((float)a / 255.0f)];
     
+}
+
+
++ (UIColor *)colorWithR:(CGFloat)R G:(CGFloat)G B:(CGFloat)B {
+    
+    return  [UIColor colorWithRed:(float)R / 255.0f green:(float)G / 255.0f blue:(float)B / 255.0f alpha:1.0f];
 }
 
 @end

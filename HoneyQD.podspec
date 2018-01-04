@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HoneyQD'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = '项目常用框架.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,23 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
+
+
+s.subspec 'NetAssembly' do |ss|
+
+
+  s.source_files = 'HoneyQD/Classes/HoneyQD/**/*'
+
+  end
+
+
+s.subspec 'CommonAssembly' do |ss|
+
+
   s.source_files = 'HoneyQD/Classes/**/*'
+
+  end
+
   
   # s.resource_bundles = {
   #   'HoneyQD' => ['HoneyQD/Assets/*.png']
@@ -40,4 +56,4 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
 
    s.dependency 'MBProgressHUD', '~> 1.1.0'
-end
+ end
